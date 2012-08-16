@@ -136,7 +136,7 @@ li.oe_heading {
 	color: #aaa;
 	height: 40px;
 	position: fixed;
-	bottom: 100px;
+	bottom: 130px;
 	opacity: 0.8;
 	z-index: 999;
 }
@@ -146,7 +146,7 @@ li.oe_heading {
 	display: block;
 	background-color: #101010;
 	color: #aaa;
-	height: 70px;
+	height: 100px;
 	bottom: 0px;
 	position: fixed;
 	bottom: 30px;
@@ -169,4 +169,37 @@ li.oe_heading {
 	font-size: 10px;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.imgpost 
+{
+	float: left;
+	margin: 0px 20px 20px 0px;
+	position: relative;
+}
+
+/* so that image still floats and looks nice even if JS is turned off */
+.imgpost img,
+img.captionme
+{
+	float: left;
+	/*background-color: #fff;
+	border: 1px solid #d7d7d7;
+	padding: 4px;*/
+}
+
+.imgpost .thecaption 
+{
+	/*background: url('../images/caption.png') no-repeat left bottom;*/
+	background-color: #101010;
+	color: #aaa;
+	height: 40px;
+	opacity: 0.8;
+	bottom: 30px;
+	left: -23px;
+	padding: 8px 0px 18px 13px;
+	position: absolute;
+	width: 95%;
+	height: 20px;
+	display:none;
 }

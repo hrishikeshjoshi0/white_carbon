@@ -5,109 +5,107 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/jmFullWall.css" />
 		
-		<style type="text/css">
-			.border {
-				border: 4px;
-				border-color: #FFF; 
-			}
-		</style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.imgpreload.js"></script>
+		<script type="text/javascript" src="js/jquery.imagepanner.js"></script>
+		<script type="text/javascript" src="js/jquery.jmFullWall.js"></script>
+		<script type="text/javascript" src="js/jq.wrapcaptions.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+				$("img").each(function(i) 
+				{
+					var captiontext = $(this).attr('title');
+					$(this).wrap("<div class='imgpost'></div>");
+					$(this).parent().append("<div class='thecaption'>" + captiontext + "</div>");		
+				});
+			});
+			
+			$(function(){
+				$('#wall').jmFullWall({
+					itemsForRow : 2,
+					itemTransition : 'slideDown',
+					itemTransitionSpeed : 150,
+					detailTransitionIn : 'slideDown',
+					detailTransitionOut : 'slideUp'
+				});	
+			});
+			
+			$('#wall-top').hide();
+		</script>
     </head>
 
     <body>
-		<!-- Basic HTML -->
-		<div class="showcase">
-			<table cellpadding="0px" cellspacing="0px">
-				<tr>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/1.jpg" alt="background" style="width: 275px;height: 275px;"/> 
-						</a>
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/3.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	  
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/5.jpg" alt="background" style="width: 275px;height: 275px;"/> 
-						</a>
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/7.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a> 
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/9.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	 
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/2.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/4.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/6.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/8.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	
-					</td>
-					<td>
-						<a href="">
-							<img class="showcaseImg" src="images/showcase/10.jpg" alt="background" style="width: 275px;height: 275px;"/>
-						</a>	
-					</td>
-				</tr>
-			</table>
+		<div id="wall-top">
 		</div>
+		<div id="wall-container" class="showcase">
+			<div id="wall-loading"></div>
+			<div id="wall">
+				<div id="wall-items">	
+					<div class="wall-item">
+						<span class="bg hide">images/showcase/23.jpg</span>
+						<span class="img_detail hide">images/showcase/23.jpg</span>
+						<span class="tooltip hide">Rings</span>
+						<a href="#"><span class="title">Rings</span></a>
+					</div>
 
+					<div class="wall-item">
+						<span class="bg hide">images/showcase/2.jpg</span>
+						<span class="img_detail hide">images/showcase/2.jpg</span>
+						<span class="tooltip hide">Pendants</span>
+						<a href="#"><span class="title">Pendants</span></a>
+					</div>
+
+					<div class="wall-item">
+						<span class="bg hide">images/showcase/3.jpg</span>
+						<span class="img_detail hide">images/showcase/3.jpg</span>
+						<span class="tooltip hide">Necklace</span>
+						<a href="#"><span class="title">Necklace</span></a>
+					</div>
+
+					<div class="wall-item">
+						<span class="bg hide">images/showcase/5.jpg</span>
+						<span class="img_detail hide">images/showcase/5.jpg</span>
+						<span class="tooltip hide">Bracelets</span>
+						<a href="#"><span class="title">Bracelets</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<div id="footer" class="oe_wrapper">
 		</div>
 
         <script type="text/javascript">
         	window.onload=function(){
-		        $(".showcaseImg").hover(
+		        $("img").hover(
         		  function () {
         			$(this)
         			.animate({ 
-      					opacity: 0.4,
-      					borderWidth: 10
-      				}, 'fast' );
+      					opacity: 0.7
+      				} );
+					$(this).next().show();
         		  }, 
         		  function () {
         			  $(this)
-        			  .removeClass('border')
         			  .animate({ 
-        					opacity: 1.0,
-        					borderWidth: 10
-        			  }, 'fast' );
+        					opacity: 1.0
+        			  });
+					  $(this).next().hide();
         		  }
         		);
 		        
 		        $('#footer').load('common/navigation.html',function() {
-		        	/* $('.thumbs').hide(1000,'linear');
+		        	$('.thumbs').hide(1000,'linear');
+					
 		        	var bottom = $('.thumbs').css('bottom');
 		        	$('.navigation').css(
 		        		{
 		        			'bottom': bottom
 		        		}
-		        	); */
+		        	);
 		        	
 			        $('#showcase').parent().addClass('current');
 		        });
