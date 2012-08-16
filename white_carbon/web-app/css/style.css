@@ -1,0 +1,172 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #000;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	color: #fff;
+	/* text-transform:uppercase; */
+	/* overflow-x: hidden; */
+}
+
+table {
+	border:0px;
+	border-collapse: inherit;
+	width: 100%;
+}
+
+tr {
+	border: 0;
+	padding: 0px;
+	margin: 0px;
+}
+
+td,th {
+	text-align: left;
+	vertical-align: top;
+}
+
+.current {
+	background-color: #FAFAFA;
+	height: 50px;
+}
+
+ul.oe_menu {
+	list-style: none;
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	width: 560px;
+	float: left;
+	clear: both;
+	position: fixed;
+	/* bottom: 110px; */
+	right: 0px;
+}
+
+ul.oe_menu>li {
+	width: 100px;
+	height: 30px;
+	float: left;
+	position: relative;
+}
+
+ul.oe_menu>li>a {
+	display: block;
+	background-color: #101010;
+	color: #aaa;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 12px;
+	width: 100px;
+	height: 30px;
+	margin: 1px;
+	text-shadow: 0px 0px 0px #000;
+	text-transform: uppercase;
+	text-align:center;
+	opacity: 0.8;
+}
+
+ul.oe_menu>li>a:hover,ul.oe_menu>li.selected>a {
+	background: #fff;
+	color: #101010;
+	opacity: 1.0;
+	/* padding: 5px; */
+}
+
+.oe_wrapper {
+	z-index: 999;
+}
+
+.oe_wrapper ul.hovered>li>a {
+	background: #fff;
+	text-shadow: 0px 0px 0px #FFF;
+}
+
+ul.oe_menu div {
+	position: absolute;
+	bottom: 103px;
+	left: 1px;
+	background: #fff;
+	width: 498px;
+	height: 180px;
+	padding: 30px;
+	display: none;
+}
+
+ul.oe_menu div ul li a {
+	text-decoration: none;
+	color: #222;
+	padding: 2px 2px 2px 4px;
+	margin: 2px;
+	display: block;
+	font-size: 12px;
+}
+
+ul.oe_menu div ul.oe_full {
+	width: 100%;
+}
+
+ul.oe_menu div ul li a:hover {
+	background: #000;
+	color: #fff;
+}
+
+ul.oe_menu li ul {
+	list-style: none;
+	float: left;
+	width: 150px;
+	margin-right: 10px;
+}
+
+li.oe_heading {
+	color: #aaa;
+	font-size: 16px;
+	margin-bottom: 10px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #ddd;
+}
+
+.navigation {
+	width: 100%;
+	display: block;
+	background-color: #101010;
+	color: #aaa;
+	height: 40px;
+	position: fixed;
+	bottom: 100px;
+	opacity: 0.8;
+	z-index: 999;
+}
+
+.thumbs {
+	width: 100%;
+	display: block;
+	background-color: #101010;
+	color: #aaa;
+	height: 70px;
+	bottom: 0px;
+	position: fixed;
+	bottom: 30px;
+	opacity: 1.0;
+	z-index: 999;
+}
+
+.copyrights {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	width: 100%;
+	display: block;
+	background-color: #222;
+	position: fixed;
+	color: #FAFAFA;
+	height: 30px;
+	bottom: 0px;
+	opacity: 1.0;
+	z-index: 999;
+	font-size: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}

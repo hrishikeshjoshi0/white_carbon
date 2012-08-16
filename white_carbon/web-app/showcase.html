@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		
+		<style type="text/css">
+			.border {
+				border: 4px;
+				border-color: #FFF; 
+			}
+		</style>
+    </head>
+
+    <body>
+		<!-- Basic HTML -->
+		<div class="showcase">
+			<table cellpadding="0px" cellspacing="0px">
+				<tr>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/1.jpg" alt="background" style="width: 275px;height: 275px;"/> 
+						</a>
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/3.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	  
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/5.jpg" alt="background" style="width: 275px;height: 275px;"/> 
+						</a>
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/7.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a> 
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/9.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/2.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/4.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/6.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/8.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	
+					</td>
+					<td>
+						<a href="">
+							<img class="showcaseImg" src="images/showcase/10.jpg" alt="background" style="width: 275px;height: 275px;"/>
+						</a>	
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="footer" class="oe_wrapper">
+		</div>
+
+        <script type="text/javascript">
+        	window.onload=function(){
+		        $(".showcaseImg").hover(
+        		  function () {
+        			$(this)
+        			.animate({ 
+      					opacity: 0.4,
+      					borderWidth: 10
+      				}, 'fast' );
+        		  }, 
+        		  function () {
+        			  $(this)
+        			  .removeClass('border')
+        			  .animate({ 
+        					opacity: 1.0,
+        					borderWidth: 10
+        			  }, 'fast' );
+        		  }
+        		);
+		        
+		        $('#footer').load('common/navigation.html',function() {
+		        	/* $('.thumbs').hide(1000,'linear');
+		        	var bottom = $('.thumbs').css('bottom');
+		        	$('.navigation').css(
+		        		{
+		        			'bottom': bottom
+		        		}
+		        	); */
+		        	
+			        $('#showcase').parent().addClass('current');
+		        });
+        	}
+        </script>
+    </body>
+</html>

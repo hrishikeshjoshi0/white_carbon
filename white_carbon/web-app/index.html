@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		
+        <style type="text/css">
+			.bg_img img{
+				width:100%;
+				position:fixed;
+				top:0px;
+				left:0px;
+				z-index:-1;
+			}
+		</style>
+    </head>
+
+    <body>
+		<!-- Basic HTML -->
+		<div id="maximage" class="bg_img" style="display: none;">
+			<img src="images/home/2.jpg" alt="background" /> 
+			<img src="images/home/3.jpg" alt="background" /> 
+			<img src="images/home/4.jpg" alt="background" /> 
+			<img src="images/home/5.jpg" alt="background" /> 
+		</div>
+
+		<div id="footer" class="oe_wrapper">
+		</div>
+
+        <!-- The JavaScript -->
+        <script src="js/jquery.cycle.all.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.maximage.js" type="text/javascript" charset="utf-8"></script>
+		
+        <script type="text/javascript">
+        	window.onload=function(){
+        		
+		        $(function(){
+		        	$('#maximage').maximage({
+					});
+		        	
+		        	$('#maximage').show();
+		        });
+		        
+		        $('#footer').load('common/navigation.html',function() {
+		        	/* 
+		        	$('.thumbs').hide(1000,'linear');
+		        	var bottom = $('.thumbs').css('bottom');
+		        	$('.navigation').css(
+		        		{
+		        			'bottom': bottom
+		        		}
+		        	); */
+		        	
+			        $('#home').parent().addClass('current');
+		        });
+        	}
+        </script>
+    </body>
+</html>

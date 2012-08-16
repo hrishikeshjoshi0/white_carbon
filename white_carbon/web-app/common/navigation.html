@@ -1,0 +1,68 @@
+	<!-- Nav -->
+<div class="navigation">
+	<ul id="oe_menu" class="oe_menu">
+		<li><a class="nav" id="home" href="index.html">Home</a></li>
+		<li><a class="nav" id="education" href="education.html">Education</a></li>
+		<li><a class="nav" id="showcase" href="showcase.html">Showcase</a></li>
+		<li><a class="nav" id="contact" href="contact.html">Contact</a></li>
+		<li><a class="nav" id="about" href="about.html">About</a></li>
+	</ul>
+</div>
+
+<div class="thumbs">
+</div>
+
+<script>
+	$('.thumbs').load('common/thumbnails.html',function(){
+		/* calling thumbnailScroller function with options as parameters */
+		$("#tS1").thumbnailScroller({ 
+			scrollerType:"hoverAccelerate", 
+			scrollerOrientation:"horizontal", 
+			scrollSpeed:2, 
+			scrollEasing:"easeOutCirc", 
+			scrollEasingAmount:600, 
+			acceleration:4, 
+			scrollSpeed:800, 
+			noScrollCenterSpace:10, 
+			autoScrolling:0, 
+			autoScrollingSpeed:2000, 
+			autoScrollingEasing:"easeInOutQuad", 
+			autoScrollingDelay:500 
+		});
+		
+		var $scroller=$(".jTscroller");
+		var totalWidth = $(".jTscroller").outerWidth(true);
+		var totalHeight = $(".jTscroller").outerWidth(true);
+		
+		$('body').mousemove(function(e){
+			var $this=$(this);
+			var pos=findPos(this);	
+			var mouseCoords=(e.pageX-pos[1]);
+			var mouseCoordsY=(e.pageY-pos[0]);
+			var mousePercentX=mouseCoords/$this.width(); if(mousePercentX>1){mousePercentX=1;}
+			var mousePercentY=mouseCoordsY/$this.height(); if(mousePercentY>1){mousePercentY=1;}
+			var destX=Math.round(-((totalWidth-$this.width())*(mousePercentX)));
+			var destY=Math.round(-((totalHeight-$this.height())*(mousePercentY)));
+			$scroller.stop(true,false).animate({left:destX},100,"easeOutCirc"); 
+		});
+
+		function findPos(obj){
+			var curleft=curtop=0;
+			if (obj.offsetParent){
+				curleft=obj.offsetLeft
+				curtop=obj.offsetTop
+				while(obj=obj.offsetParent){
+					curleft+=obj.offsetLeft
+					curtop+=obj.offsetTop
+				}
+			}
+			return [curtop,curleft];
+		}
+	});
+</script>
+
+<!-- Copyrights -->
+<div class="copyrights">
+	Copyrights 2012
+</div>
+
